@@ -355,25 +355,25 @@ function results = imm_run(design,opts,varargin)
             I = [100 200];
             
         case 38
-            %PSI at retrieval (Guisquet-Verrier 2015)
+            %PSI after conditioning (Gisquet-Verrier 2015)
             N = [1 1 1];
-            feats = [1 1; 1 0; 1 0];
+            feats = [1 1; 0 0; 1 0];
             rewards = [1; 0; 0];
             I = [train_ext_interval 20];
             opts.psi = zeros(sum(N),1);
             opts.psi(sum(N)-1) = 1;
             
         case 39
-            %no PSI at retrieval or test (Guisquet-Verrier 2015)
+            %no PSI at conditioning or test (Gisquet-Verrier 2015)
             N = [1 1 1];
-            feats = [1 0; 1 0; 1 0];
+            feats = [1 0; 0 0; 1 0];
             rewards = [1; 0; 0];
             I = [train_ext_interval 20];
             
         case 40
-            %PSI at retrieval + test (Guisquet-Verrier 2015)
+            %PSI at conditioning + test (Gisquet-Verrier 2015)
             N = [1 1 1];
-            feats = [1 1; 1 0; 1 1];
+            feats = [1 1; 0 0; 1 1];
             rewards = [1; 0; 0];
             I = [train_ext_interval 20];
             opts.psi = zeros(sum(N),1);
